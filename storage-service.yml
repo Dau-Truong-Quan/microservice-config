@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: storage-service
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3308/storagedb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Bangkok}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: 8084
+
+app:
+  storage:
+    location: ${STORAGE_LOCATION:./data/storage}
