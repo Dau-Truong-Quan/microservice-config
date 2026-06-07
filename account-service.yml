@@ -1,11 +1,11 @@
 spring:
   application:
-    name: account
+    name: account-service
   datasource:
-    url: ${DB_URL:jdbc:mysql://172.28.160.3:3306/accountsdb?useSSL=false&serverTimezone=Asia/Bangkok}
+    url: ${DB_URL}
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:123456789}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   sql:
     init:
       mode: always
